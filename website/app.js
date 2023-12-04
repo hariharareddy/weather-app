@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = "&appid=8ba9b73993cd752541cb6438c5880d2c&units=imperial";
+const apiKey = "&appid=8ba9b73993cd752541cb6438c5880d2c&units=metric";
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -63,7 +63,7 @@ const retrieveData = async () =>{
     // Transform into JSON
     const allData = await request.json()
     // Write updated data to DOM elements
-    document.getElementById('temp').innerHTML ='Temperature is ' + Math.round(allData.temperature) + '°';
+    document.getElementById('temp').innerHTML ='Temperature is ' + Math.round(allData.temperature) + '°C';
     document.getElementById('date').innerHTML = 'Date: ' + allData.date;
     document.getElementById('content').innerHTML = 'You are feeling ' + allData.userResponse;
     }
